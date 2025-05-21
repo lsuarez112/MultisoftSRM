@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Activar modo oscuro por clase */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    /* 🎨 Colores */
+    --color-mts: #1D2D53;
+
+    /* 🅰️ Tipografías */
+    /* Títulos principales */
+    /* Encabezados grandes, secciones principales */
+    --font-roboto: 'Roboto', system-ui, sans-serif;
+    /* Títulos secundarios */
+    /* Subtítulos, labels de cards/modales */
+    --font-poppins: 'Poppins', system-ui, sans-serif;
+    /* Texto general / UI */
+    /* Cuerpo de texto, descripciones, botones */
+    --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+    :root {
+        /* 🔖 Meta */
+        --project-version: "v0.0.1";
+    }
+}
+
+@layer utilities {
+    .project-version::after {
+        content: var(--project-version);
+        font-size: 0.75rem;
+        color: var(--color-mtsprimary);
+        display: inline-block;
+        margin-left: 0.5rem;
+    }
+}

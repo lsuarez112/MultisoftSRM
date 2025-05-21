@@ -1,0 +1,40 @@
+<tr>
+    <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
+        <h2 class="font-medium text-gray-800 dark:text-white">{{numero_oc}}</h2>
+    </td>
+    <td class="px-12 py-4 text-sm whitespace-nowrap">
+        <h4 class="text-gray-700 dark:text-gray-200">{{fecha}}</h4>
+    </td>
+    <td class="px-4 py-4 text-sm whitespace-nowrap">
+        <h4 class="text-gray-700 dark:text-gray-200">${{importe}}</h4>
+    </td>
+    <td class="px-4 py-4 text-sm whitespace-nowrap">
+        <div class="flex items-center space-x-2 text-sm w-full">
+            <label for="pdfInput_{{numero_oc}}" class="flex items-center px-2 py-1 border-2 border-dashed border-gray-300 rounded
+        text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer transition duration-200
+        {{label_disabled}}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-5 mr-1">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                </svg>
+                <span class="text-xs">Seleccionar PDF</span>
+                <input type="file" id="pdfInput_{{numero_oc}}" accept="application/pdf" class="hidden"
+                    onchange="handleFileChange('{{numero_oc}}')" {{input_disabled}} />
+            </label>
+
+            <span id="fileInfo_{{numero_oc}}" class="text-gray-600 italic truncate max-w-[150px]}"
+                title="{{file_title}}">{{file_label}}</span>
+
+            <button onclick="uploadPDF('{{numero_oc}}')"
+                class="text-blue-600 hover:text-blue-800 font-medium transition text-xs cursor-pointer"
+                {{button_disabled}}>Subir</button>
+        </div>
+    </td>
+    <td class="px-4 py-4 text-sm whitespace-nowrap">
+        <div class="flex justify-center">
+            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                data-oc="{{numero_oc}}">Ver</a>
+        </div>
+    </td>
+</tr>

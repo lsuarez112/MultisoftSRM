@@ -1,0 +1,24 @@
+{
+  "name": "wms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build:page": "node ./src/scripts/modules/build-page.js",
+    "watch:login": "node ./src/scripts/modules/build-page.js login --watch",
+    "watch:index": "node ./src/scripts/modules/build-page.js index --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.6",
+    "tailwindcss": "^4.1.6"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.5.32",
+    "alpinejs": "^3.14.9",
+    "jquery": "^3.7.1"
+  }
+}

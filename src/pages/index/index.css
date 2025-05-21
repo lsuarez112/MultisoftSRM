@@ -1,0 +1,5 @@
+/* Tema Global del Proyecto */
+@import '../../../public/assets/styles/theme.css';
+
+/* Componentes */
+@import '../../components/sidebar/sidebar.css'

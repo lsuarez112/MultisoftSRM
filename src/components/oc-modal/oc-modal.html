@@ -1,0 +1,48 @@
+<div x-data="{ isOpen: false, ocData: null }" x-cloak id="oc-modal">
+  <div x-show="isOpen" class="fixed inset-0 z-40 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 w-full max-w-2xl"
+         @click.outside="isOpen = false">
+
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">
+        Detalle de Orden de Compra <span x-text="ocData?.numero_oc"></span>
+      </h2>
+
+      <p class="text-sm text-gray-600 dark:text-gray-300 mb-1">
+        Fecha: <span x-text="ocData?.fecha"></span>
+      </p>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mb-1">
+        Importe: $<span x-text="ocData?.importe.toLocaleString('es-AR', { minimumFractionDigits: 2 })"></span>
+      </p>
+
+      <template x-if="ocData?.detalle_items?.length">
+        <table class="mt-4 w-full text-sm text-left text-gray-700 dark:text-gray-200">
+          <thead class="text-xs uppercase bg-gray-200 dark:bg-gray-700">
+            <tr>
+              <th class="px-3 py-2">Código</th>
+              <th class="px-3 py-2">Proveedor</th>
+              <th class="px-3 py-2">Descripción</th>
+              <th class="px-3 py-2">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <template x-for="item in ocData.detalle_items" :key="item.codigo">
+              <tr class="border-b border-gray-300 dark:border-gray-600">
+                <td class="px-3 py-2" x-text="item.codigo"></td>
+                <td class="px-3 py-2" x-text="item.codigo_proveedor"></td>
+                <td class="px-3 py-2" x-text="item.descripcion"></td>
+                <td class="px-3 py-2" x-text="item.cantidad"></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </template>
+
+      <div class="mt-6 text-right">
+        <button @click="isOpen = false"
+                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

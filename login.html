@@ -16,6 +16,9 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="/src/pages/login/output.css">
+
+  <script src="/public/lib/jquery.min.js" defer></script>
+  <script type="module" src="/src/scripts/shared/init.js"></script>
 </head>
 
 <body class="relative bg-slate-50 dark:bg-gray-900" data-page="login">
@@ -32,7 +35,7 @@
       <img src="/public/assets/images/Logo_blanco_transparente.png" alt="Logo MTS" class="max-w-xs w-full mb-4" />
       <h1 class="flex flex-col justify-center items-center text-lg font-medium text-white font-poppins">
         <span>Multisoft</span><span>Supplier Relationship Management</span>
-      </h1>      
+      </h1>
     </div>
 
     <!-- Formulario -->
@@ -79,7 +82,8 @@
               </label>
             </div>
 
-            <label for="remember" class="text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer font-inter">
+            <label for="remember"
+              class="text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer font-inter">
               Recordarme
             </label>
           </div>
@@ -105,9 +109,6 @@
       </p>
     </div>
   </div>
-
-  <script src="/public/lib/jquery.min.js"></script>
-  <script type="module" src="/src/scripts/shared/init.js"></script>
 </body>
 
 </html>

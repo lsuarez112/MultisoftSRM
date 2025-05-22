@@ -1,12 +1,16 @@
+// @ts-nocheck
+
+// import { Alpine } from 'alpinejs';
+
 /**
  * index.js
  * 
  */
 export async function initIndex() {
-    console.log('JFT - 🔐 initIndex cargado');
+  console.log('JFT - 🔐 initIndex cargado');
 
-    await renderOrdenesDeCompra();
-    // Luego: await renderFacturasCargadas(); etc.
+  await renderOrdenesDeCompra();
+  // Luego: await renderFacturasCargadas(); etc.
 }
 
 async function renderOrdenesDeCompra() {
@@ -16,8 +20,8 @@ async function renderOrdenesDeCompra() {
   if (!tablaBody) return;
 
   try {
-    // Simula un delay para que se vean los loaders (2500ms)
-    await new Promise(resolve => setTimeout(resolve, 2500));
+    // Simula un delay para que se vean los loaders (1500ms)
+    await new Promise(resolve => setTimeout(resolve, 1500));
 
     // Limpia contenido anterior (por si hay loaders o duplicados)
     tablaBody.innerHTML = '';
@@ -28,6 +32,15 @@ async function renderOrdenesDeCompra() {
     ]);
 
     ordenes.forEach(oc => {
+
+      const pdfNombre = oc.pdf_adjunto
+        ? oc.pdf_path.split('/').pop()
+        : 'Sin archivo';
+
+      const pdfLabel = pdfNombre.length > 30
+        ? pdfNombre.slice(0, 27) + '...'
+        : pdfNombre;
+
       const rowHtml = rowTemplateHtml
         .replace(/{{numero_oc}}/g, oc.numero_oc)
         .replace(/{{fecha}}/g, formatearFecha(oc.fecha))
@@ -35,11 +48,33 @@ async function renderOrdenesDeCompra() {
         .replace(/{{label_disabled}}/g, oc.pdf_adjunto ? 'opacity-50 pointer-events-none' : '')
         .replace(/{{input_disabled}}/g, oc.pdf_adjunto ? 'disabled' : '')
         .replace(/{{button_disabled}}/g, oc.pdf_adjunto ? 'disabled class="text-gray-400 cursor-not-allowed text-xs"' : '')
-        .replace(/{{file_label}}/g, oc.pdf_adjunto ? 'PDF cargado' : 'Sin archivo')
-        .replace(/{{file_title}}/g, oc.pdf_adjunto ? oc.pdf_path : 'Sin archivo');
+        .replace(/{{file_label}}/g, pdfLabel)
+        .replace(/{{file_title}}/g, pdfNombre);
 
       tablaBody.insertAdjacentHTML('beforeend', rowHtml);
     });
+
+    const { initOcRowEvents, uploadPDF, handleFileChange } = await import('/src/components/oc-row/oc-row.js');
+
+    window.uploadPDF = uploadPDF;
+    window.handleFileChange = handleFileChange;
+
+    initOcRowEvents();
+
+    // document.addEventListener('alpine:init', () => {
+    //   Alpine.store('ocModal', {
+    //     isOpen: false,
+    //     ocData: null,
+    //     open(oc) {
+    //       this.ocData = oc;
+    //       this.isOpen = true;
+    //     },
+    //     close() {
+    //       this.isOpen = false;
+    //       this.ocData = null;
+    //     }
+    //   });
+    // });
 
   } catch (err) {
     console.error('❌ Error al renderizar Órdenes de Compra:', err);

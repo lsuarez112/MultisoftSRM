@@ -1,0 +1,37 @@
+[
+  {
+    "fecha": "2025-05-01",
+    "numero_doc": "FAC-0010",
+    "tipo": "Factura",
+    "debe": 15000,
+    "haber": 0
+  },
+  {
+    "fecha": "2025-05-03",
+    "numero_doc": "REC-0001",
+    "tipo": "Recibo",
+    "debe": 0,
+    "haber": 5000
+  },
+  {
+    "fecha": "2025-05-05",
+    "numero_doc": "FAC-0011",
+    "tipo": "Factura",
+    "debe": 20000,
+    "haber": 0
+  },
+  {
+    "fecha": "2025-05-07",
+    "numero_doc": "NC-0002",
+    "tipo": "Nota de Crédito",
+    "debe": 0,
+    "haber": 3000
+  },
+  {
+    "fecha": "2025-05-10",
+    "numero_doc": "REC-0002",
+    "tipo": "Recibo",
+    "debe": 0,
+    "haber": 10000
+  }
+]

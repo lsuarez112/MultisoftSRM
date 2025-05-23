@@ -7,12 +7,13 @@
  */
 
 import { setupDarkMode } from '../modules/darkmode.js';
+
 import { buildTemplates } from '../modules/template-engine.js';
 import { initLogin } from '../../pages/login/login.js';
 import { initIndex } from '../../pages/index/index.js';
 
 $(async function () {
-  // Inicializa el modo oscuro (añade/remueve clase 'dark' en <html>)
+  // 1. Inicializa el modo oscuro (añade/remueve clase 'dark' en <html>)
   setupDarkMode();
 
   // 2. Cargar componentes HTML dinámicos
@@ -24,6 +25,7 @@ $(async function () {
    */
   const page = $(document.body).attr('data-page');
 
+  // 3. Ejecuta Init de la página
   const routes = {
     login: initLogin,
     index: initIndex

@@ -15,6 +15,9 @@
  * Dependencia visual:
  * - Tailwind debe estar configurado con `darkMode: 'class'`.
  */
+
+export function setupComponent() {}
+
 export function initComponent() {
   const toggleButton = document.getElementById('mode-toggle');
   const root = document.documentElement;

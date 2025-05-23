@@ -1,10 +1,10 @@
 export function setupComponent() {
-    if (!Alpine.store('ocModal')) {
-        Alpine.store('ocModal', {
+    if (!Alpine.store('pagosModal')) {
+        Alpine.store('pagosModal', {
             isOpen: false,
-            ocData: null,
-            open(oc) { this.ocData = oc; this.isOpen = true; },
-            close() { this.ocData = null; this.isOpen = false; }
+            pagosData: null,
+            open(pago) { this.pagosData = pago; this.isOpen = true; },
+            close() { this.pagosData = null; this.isOpen = false; }
         });
     }
 }
@@ -16,6 +16,6 @@ export function initComponent() {
         return;
     }
 
-    const el = document.getElementById('oc-modal');
+    const el = document.getElementById('pagos-modal');
     if (el) Alpine.initTree(el);
 }

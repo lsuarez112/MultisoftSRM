@@ -1,0 +1,57 @@
+[
+  {
+    "fecha_carga": "2025-05-20",
+    "fecha_emision": "2025-05-18",
+    "fecha_vencimiento": "2025-06-17",
+    "numero_fact": "FAC-0001-20250518",
+    "importe": 128750.50,
+    "estado": "Pendiente",
+    "observacion": "Factura sin archivo adjunto. Se solicitó al proveedor reenviar la documentación correspondiente antes de la validación contable. Plazo límite: 22/05.",
+    "condicion_compra": "Contado",
+    "centro_costo": "CC-Logística"
+  },
+  {
+    "fecha_carga": "2025-05-19",
+    "fecha_emision": "2025-05-17",
+    "fecha_vencimiento": "2025-06-16",
+    "numero_fact": "FAC-0002-20250517",
+    "importe": 23789.00,
+    "estado": "Aprobada",
+    "observacion": "Factura verificada por administración y enviada a tesorería para su procesamiento de pago. Se revisaron los datos fiscales y los ítems están correctamente detallados.",
+    "condicion_compra": "30 días",
+    "centro_costo": "CC-Producción"
+  },
+  {
+    "fecha_carga": "2025-05-18",
+    "fecha_emision": "2025-05-16",
+    "fecha_vencimiento": "2025-05-31",
+    "numero_fact": "FAC-0003-20250516",
+    "importe": 59500.75,
+    "estado": "Rechazada",
+    "observacion": "Error en el importe declarado. El subtotal no coincide con la suma de los ítems detallados. Se contactó al proveedor para emitir una nota de crédito o refacturación.",
+    "condicion_compra": "Contado",
+    "centro_costo": "CC-Mantenimiento"
+  },
+  {
+    "fecha_carga": "2025-05-17",
+    "fecha_emision": "2025-05-15",
+    "fecha_vencimiento": "2025-06-15",
+    "numero_fact": "FAC-0004-20250515",
+    "importe": 102345.00,
+    "estado": "Pendiente",
+    "observacion": "En revisión por el área de pagos debido a diferencias en el número de orden de compra. El área de compras está cotejando la información con el proveedor.",
+    "condicion_compra": "60 días",
+    "centro_costo": "CC-Proyectos"
+  },
+  {
+    "fecha_carga": "2025-05-16",
+    "fecha_emision": "2025-05-14",
+    "fecha_vencimiento": "2025-05-29",
+    "numero_fact": "FAC-0005-20250514",
+    "importe": 8800.00,
+    "estado": "Aprobada",
+    "observacion": "Factura validada, sin observaciones relevantes.",
+    "condicion_compra": "Contado",
+    "centro_costo": "CC-Calidad"
+  }
+]

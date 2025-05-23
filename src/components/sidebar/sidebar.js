@@ -1,3 +1,5 @@
+export function setupComponent() {}
+
 export function initComponent() {
   const sidebar = document.getElementById('sidebar');
   const closeSidebarBtn = document.getElementById('close-sidebar');

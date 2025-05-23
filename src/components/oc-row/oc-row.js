@@ -1,3 +1,5 @@
+import {formatearFecha} from '/src/scripts/modules/tools.js'
+
 // @ts-nocheck
 // 📦 Modo test: guardamos el archivo en memoria por OC
 const archivosPorOC = {};
@@ -65,31 +67,29 @@ export function uploadPDF(numeroOC) {
  * Inicializa eventos en las filas generadas: botón "Ver"
  */
 export function initOcRowEvents() {
-    const botonesVer = document.querySelectorAll('a[data-oc]');
+    const botonesVer = document.querySelectorAll('#ordenes_de_compra_table_content a[data-oc]');
 
     botonesVer.forEach(btn => {
         btn.addEventListener('click', async e => {
             e.preventDefault();
             const numeroOC = btn.dataset.oc;
 
-            console.log('click en ver OC', numeroOC);
-
             try {
                 const response = await fetch('/ordenes_de_compra.json');
                 const data = await response.json();
                 const oc = data.find(o => o.numero_oc === numeroOC);
-                console.log('oc', oc);
                 if (!oc) {
                     console.error(`❌ No se encontró OC ${numeroOC}`);
                     return;
                 }
-                alert(JSON.stringify(oc));
-                // const modal = document.getElementById('oc-modal');
-                // if (modal?.__x) {
-                //     modal.__x.$data.ocData = oc;
-                //     modal.__x.$data.isOpen = true;
-                // }
 
+                oc.fecha = formatearFecha(oc.fecha)
+                oc.detalle_items = oc.detalle_items.map(item => ({
+                    ...item,
+                    fecha_pactada: formatearFecha(item.fecha_pactada)
+                }));
+
+                Alpine.store('ocModal').open(oc);
             } catch (err) {
                 console.error(`❌ No se pudo cargar OC ${numeroOC}`, err);
             }

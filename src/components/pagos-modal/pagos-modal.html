@@ -1,0 +1,151 @@
+<div x-data x-cloak id="pagos-modal">
+  <div x-show="$store.pagosModal.isOpen" class="fixed inset-0 z-40 bg-black/80 flex items-center justify-center px-4">
+    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 w-full max-w-7xl"
+      @click.outside="$store.pagosModal.close()">
+
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">
+        Detalle de Pago
+        <span x-text="$store.pagosModal.pagosData?.numero_pago"></span>
+      </h2>
+
+      <p class="text-sm text-gray-600 dark:text-gray-300 mb-1">
+        Fecha:
+        <span x-text="$store.pagosModal.pagosData?.fecha"></span>
+      </p>
+
+      <p class="text-sm text-gray-600 dark:text-gray-300 mb-1">
+        Importe:
+        $<span x-text="$store.pagosModal.pagosData?.monto.toLocaleString('es-AR', { minimumFractionDigits: 2 })"></span>
+      </p>
+
+      <template x-if="$store.pagosModal.pagosData?.documentos?.length">
+        <div class="mt-4 border border-gray-200 dark:border-gray-700 rounded-lg overflow-x-auto">
+          <table class="text-sm min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead class="bg-gray-50 dark:bg-gray-800">
+              <tr>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Comprobante</th>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Número</th>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Cuota</th>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Fecha</th>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Imp. Original</th>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Moneda</th>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Saldo Doc.</th>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Liquidado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-for="item in $store.pagosModal.pagosData.documentos" :key="item.comprobante">
+                <tr class="border-b border-gray-300 dark:border-gray-600">
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h4 class="text-gray-700 dark:text-gray-200" x-text="item.comprobante"></h4>
+                  </td>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h2 class="font-medium text-gray-800 dark:text-white" x-text="item.numero"></h2>
+                  </td>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h4 class="text-gray-700 dark:text-gray-200" x-text="item.cuota"></h4>
+                  </td>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h4 class="text-gray-700 dark:text-gray-200" x-text="item.fecha"></h4>
+                  </td>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h4 class="text-gray-700 dark:text-gray-200"
+                      x-text="`$${item.importe_original.toLocaleString('es-AR', { minimumFractionDigits: 2 })}`"></h4>
+                  </td>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h4 class="text-gray-700 dark:text-gray-200" x-text="item.moneda"></h4>
+                  </td>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h4 class="text-gray-700 dark:text-gray-200"
+                      x-text="`$${item.saldo_doc.toLocaleString('es-AR', { minimumFractionDigits: 2 })}`"></h4>
+                  </td>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h4 class="text-gray-700 dark:text-gray-200"
+                      x-text="`$${item.liquidado.toLocaleString('es-AR', { minimumFractionDigits: 2 })}`"></h4>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </template>
+
+      <template x-if="$store.pagosModal.pagosData?.detalles_pago?.length">
+        <div
+          class="mt-4 border border-gray-200 dark:border-gray-700 rounded-t md:rounded-lg overflow-x-auto w-full lg:max-w-2xl">
+          <h4 class="text-md font-semibold text-gray-800 dark:text-white m-2">
+            Conceptos de Pagos
+          </h4>
+          <table class="text-sm min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead class="bg-gray-50 dark:bg-gray-800">
+              <tr>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Código</th>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Concepto</th>
+                <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Monto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-for="item in $store.pagosModal.pagosData.detalles_pago" :key="item.codigo">
+                <tr class="border-b border-gray-300 dark:border-gray-600">
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h2 class="font-medium text-gray-800 dark:text-white" x-text="item.codigo"></h2>
+                  </td>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h4 class="text-gray-700 dark:text-gray-200" x-text="item.concepto"></h4>
+                  </td>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap">
+                    <h4 class="text-gray-700 dark:text-gray-200"
+                      x-text="`$${item.monto.toLocaleString('es-AR', { minimumFractionDigits: 2 })}`"></h4>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </template>
+
+      <div class="flex flex-col lg:flex-row justify-between align-baseline">
+        <template x-if="$store.pagosModal.pagosData?.retenciones?.length">
+          <div
+            class="mt-4 border border-gray-200 dark:border-gray-700 rounded-t md:rounded-lg overflow-x-auto w-full lg:max-w-2xl flex-grow-1">
+            <h4 class="text-md font-semibold text-gray-800 dark:text-white m-2">
+              Retenciones
+            </h4>
+            <table class="text-sm min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-gray-800">
+                <tr>
+                  <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Retención</th>
+                  <th class="px-4 py-2 text-sm font-normal text-left text-gray-500 dark:text-gray-400">Importe</th>
+                </tr>
+              </thead>
+              <tbody>
+                <template x-for="item in $store.pagosModal.pagosData.retenciones" :key="item.numero">
+                  <tr class="border-b border-gray-300 dark:border-gray-600">
+                    <td class="px-4 py-2 text-sm whitespace-nowrap">
+                      <h2 class="font-medium text-gray-800 dark:text-white"
+                        x-text="`${item.numero} - ${item.tipo} (%${item.porcentaje})`"></h2>
+                    </td>
+                    <td class="px-4 py-2 text-sm whitespace-nowrap">
+                      <h4 class="text-gray-700 dark:text-gray-200"
+                        x-text="`$${item.monto.toLocaleString('es-AR', { minimumFractionDigits: 2 })}`"></h4>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </template>
+        <div class="mt-4 lg:mt-auto text-end font-medium text-gray-800 dark:text-white gap-4">Total: <span
+            x-text="`$${$store.pagosModal.pagosData?.monto.toLocaleString('es-AR', { minimumFractionDigits: 2 })}`"></span>
+        </div>
+      </div>
+
+      <div class="mt-6 text-right">
+        <button @click="$store.pagosModal.close()"
+          class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition cursor-pointer font-inter">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

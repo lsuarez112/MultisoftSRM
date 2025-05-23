@@ -1,0 +1,214 @@
+[
+    {
+        "numero_pago": "PAG-1001",
+        "fecha": "2025-05-01",
+        "fecha_vencimiento": "2025-05-10",
+        "monto": 15000,
+        "medio_de_pago": "Transferencia",
+        "estado": "Acreditado",
+        "documentos": [
+            {
+                "comprobante": "Factura A",
+                "numero": "FAC-0010",
+                "cuota": "1/1",
+                "fecha": "2025-04-20",
+                "importe_original": 15000,
+                "moneda": "ARS",
+                "saldo_doc": 0,
+                "liquidado": 15000
+            }
+        ],
+        "detalles_pago": [
+            {
+                "codigo": "TR",
+                "concepto": "Transferencia bancaria",
+                "monto": 15000
+            }
+        ],
+        "retenciones": [
+            {
+                "tipo": "IVA",
+                "numero": "RET-0001",
+                "porcentaje": 10.5,
+                "monto": 1575
+            },
+            {
+                "tipo": "Ganancias",
+                "numero": "RET-0002",
+                "porcentaje": 2,
+                "monto": 300
+            }
+        ]
+    },
+    {
+        "numero_pago": "PAG-1002",
+        "fecha": "2025-05-03",
+        "fecha_vencimiento": "2025-05-13",
+        "monto": 8700,
+        "medio_de_pago": "Cheque",
+        "estado": "Pendiente",
+        "documentos": [
+            {
+                "comprobante": "Factura B",
+                "numero": "FAC-0011",
+                "cuota": "1/2",
+                "fecha": "2025-04-25",
+                "importe_original": 8700,
+                "moneda": "ARS",
+                "saldo_doc": 8700,
+                "liquidado": 0
+            }
+        ],
+        "detalles_pago": [
+            {
+                "codigo": "CH",
+                "concepto": "Cheque diferido",
+                "monto": 8700
+            }
+        ],
+        "retenciones": [
+            {
+                "tipo": "IIBB",
+                "numero": "RET-0003",
+                "porcentaje": 3,
+                "monto": 261
+            }
+        ]
+    },
+    {
+        "numero_pago": "PAG-1003",
+        "fecha": "2025-05-06",
+        "fecha_vencimiento": "2025-05-16",
+        "monto": 4500,
+        "medio_de_pago": "Efectivo",
+        "estado": "Acreditado",
+        "documentos": [
+            {
+                "comprobante": "Factura C",
+                "numero": "FAC-0012",
+                "cuota": "1/1",
+                "fecha": "2025-05-01",
+                "importe_original": 4500,
+                "moneda": "ARS",
+                "saldo_doc": 0,
+                "liquidado": 4500
+            }
+        ],
+        "detalles_pago": [
+            {
+                "codigo": "EF",
+                "concepto": "Pago en efectivo",
+                "monto": 4500
+            }
+        ],
+        "retenciones": [
+            {
+                "tipo": "IVA",
+                "numero": "RET-0004",
+                "porcentaje": 10.5,
+                "monto": 472.50
+            }
+        ]
+    },
+    {
+        "numero_pago": "PAG-1004",
+        "fecha": "2025-05-08",
+        "fecha_vencimiento": "2025-05-15",
+        "monto": 10250,
+        "medio_de_pago": "Transferencia",
+        "estado": "Rechazado",
+        "documentos": [
+            {
+                "comprobante": "Nota de Crédito",
+                "numero": "NC-1001",
+                "cuota": "1/1",
+                "fecha": "2025-04-30",
+                "importe_original": -2000,
+                "moneda": "ARS",
+                "saldo_doc": 0,
+                "liquidado": -2000
+            },
+            {
+                "comprobante": "Factura D",
+                "numero": "FAC-0013",
+                "cuota": "1/1",
+                "fecha": "2025-05-02",
+                "importe_original": 12250,
+                "moneda": "ARS",
+                "saldo_doc": 12250,
+                "liquidado": 0
+            }
+        ],
+        "detalles_pago": [
+            {
+                "codigo": "TR",
+                "concepto": "Transferencia fallida",
+                "monto": 10250
+            }
+        ],
+        "retenciones": [
+            {
+                "tipo": "Ganancias",
+                "numero": "RET-0005",
+                "porcentaje": 2,
+                "monto": 205
+            }
+        ]
+    },
+    {
+        "numero_pago": "PAG-1005",
+        "fecha": "2025-05-10",
+        "fecha_vencimiento": "2025-05-18",
+        "monto": 12000,
+        "medio_de_pago": "Mercado Pago",
+        "estado": "Acreditado",
+        "documentos": [
+            {
+                "comprobante": "Factura E",
+                "numero": "FAC-0014",
+                "cuota": "2/2",
+                "fecha": "2025-04-18",
+                "importe_original": 6000,
+                "moneda": "ARS",
+                "saldo_doc": 0,
+                "liquidado": 6000
+            },
+            {
+                "comprobante": "Factura F",
+                "numero": "FAC-0015",
+                "cuota": "1/1",
+                "fecha": "2025-04-28",
+                "importe_original": 6000,
+                "moneda": "ARS",
+                "saldo_doc": 0,
+                "liquidado": 6000
+            }
+        ],
+        "detalles_pago": [
+            {
+                "codigo": "MP",
+                "concepto": "Mercado Pago",
+                "monto": 8000
+            },
+            {
+                "codigo": "EF",
+                "concepto": "Efectivo adicional",
+                "monto": 4000
+            }
+        ],
+        "retenciones": [
+            {
+                "tipo": "IIBB",
+                "numero": "RET-0006",
+                "porcentaje": 3.5,
+                "monto": 420
+            },
+            {
+                "tipo": "IVA",
+                "numero": "RET-0007",
+                "porcentaje": 10.5,
+                "monto": 1260
+            }
+        ]
+    }
+]

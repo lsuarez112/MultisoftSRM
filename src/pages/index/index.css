@@ -2,4 +2,5 @@
 @import '../../../public/assets/styles/theme.css';
 
 /* Componentes */
-@import '../../components/sidebar/sidebar.css'
+@import '../../components/sidebar/sidebar.css';
+@import '../../components/oc-modal/oc-modal.css';

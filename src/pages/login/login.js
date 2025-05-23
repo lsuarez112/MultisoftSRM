@@ -13,6 +13,8 @@ export function initLogin() {
     const $password = $('#password');
     const $remember = $('#remember');
 
+    const $togglePassword = $('#toggle-pasword')
+
     /**
      * Evento de envío del formulario
      */
@@ -45,6 +47,12 @@ export function initLogin() {
             showStatus('Usuario o contraseña incorrectos.', 'error');
         }
     });
+
+    $togglePassword.on('click', function() {
+        console.log('click')
+        const tipoActual = $password.attr('type');
+        $password.attr('type', tipoActual === 'password' ? 'text' : 'password');
+    })
 
     tryAutoLogin();
 }

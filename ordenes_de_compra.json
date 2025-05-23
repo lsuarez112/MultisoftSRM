@@ -1,93 +1,133 @@
 [
-    {
-        "numero_oc": "OC-1001-20240501",
-        "fecha": "2024-05-01",
-        "importe": 15430.75,
-        "pdf_adjunto": true,
-        "pdf_path": "/assets/pdfs/OC-1001.pdf",
-        "detalle_items": [
-            {
-                "codigo": "A-001",
-                "codigo_proveedor": "ZXC-900",
-                "descripcion": "Chapa galvanizada 2mm",
-                "cantidad": 20
-            },
-            {
-                "codigo": "A-002",
-                "codigo_proveedor": "ZXC-901",
-                "descripcion": "Tornillos M5 x 20",
-                "cantidad": 150
-            }
-        ]
-    },
-    {
-        "numero_oc": "OC-1002-20240503",
-        "fecha": "2024-05-03",
-        "importe": 9820.00,
-        "pdf_adjunto": false,
-        "detalle_items": [
-            {
-                "codigo": "B-013",
-                "codigo_proveedor": "MNO-305",
-                "descripcion": "Corte láser aluminio",
-                "cantidad": 12
-            },
-            {
-                "codigo": "B-020",
-                "codigo_proveedor": "MNO-312",
-                "descripcion": "Soporte mecanizado CNC",
-                "cantidad": 5
-            }
-        ]
-    },
-    {
-        "numero_oc": "OC-1003-20240506",
-        "fecha": "2024-05-06",
-        "importe": 23500.00,
-        "pdf_adjunto": true,
-        "pdf_path": "/assets/pdfs/OC-1003.pdf",
-        "detalle_items": [
-            {
-                "codigo": "C-100",
-                "codigo_proveedor": "ABC-100",
-                "descripcion": "Panel estructural 1000x2000",
-                "cantidad": 10
-            }
-        ]
-    },
-    {
-        "numero_oc": "OC-1004-20240509",
-        "fecha": "2024-05-09",
-        "importe": 600.00,
-        "pdf_adjunto": false,
-        "detalle_items": [
-            {
-                "codigo": "D-001",
-                "codigo_proveedor": "LMN-201",
-                "descripcion": "Rondanas acero inoxidable",
-                "cantidad": 300
-            }
-        ]
-    },
-    {
-        "numero_oc": "OC-1005-20240515",
-        "fecha": "2024-05-15",
-        "importe": 4100.99,
-        "pdf_adjunto": true,
-        "pdf_path": "/assets/pdfs/OC-1005.pdf",
-        "detalle_items": [
-            {
-                "codigo": "E-010",
-                "codigo_proveedor": "XYZ-556",
-                "descripcion": "Caja eléctrica IP65",
-                "cantidad": 8
-            },
-            {
-                "codigo": "E-011",
-                "codigo_proveedor": "XYZ-557",
-                "descripcion": "Conectores macho-hembra",
-                "cantidad": 20
-            }
-        ]
-    }
+  {
+    "numero_oc": "OC-1001-20240501",
+    "fecha": "2024-05-01",
+    "importe": 10490.0,
+    "pdf_adjunto": true,
+    "pdf_path": "/assets/pdfs/OC-1001.pdf",
+    "detalle_items": [
+      {
+        "codigo": "A-001",
+        "codigo_proveedor": "ZXC-900",
+        "descripcion": "Chapa galvanizada 2mm",
+        "cantidad": 20,
+        "precio_unitario": 500.5,
+        "fecha_pactada": "2024-05-10",
+        "estado": "pendiente",
+        "cantidad_pendiente": 20,
+        "centro_costos": "CC-MEC-01"
+      },
+      {
+        "codigo": "A-002",
+        "codigo_proveedor": "ZXC-901",
+        "descripcion": "Tornillos M5 x 20",
+        "cantidad": 150,
+        "precio_unitario": 3.2,
+        "fecha_pactada": "2024-05-08",
+        "estado": "entregado",
+        "cantidad_pendiente": 0,
+        "centro_costos": "CC-MNT-03"
+      }
+    ]
+  },
+  {
+    "numero_oc": "OC-1002-20240503",
+    "fecha": "2024-05-03",
+    "importe": 5600.0,
+    "pdf_adjunto": false,
+    "detalle_items": [
+      {
+        "codigo": "B-013",
+        "codigo_proveedor": "MNO-305",
+        "descripcion": "Corte láser aluminio",
+        "cantidad": 12,
+        "precio_unitario": 300.0,
+        "fecha_pactada": "2024-05-12",
+        "estado": "pendiente",
+        "cantidad_pendiente": 12,
+        "centro_costos": "CC-LSR-02"
+      },
+      {
+        "codigo": "B-020",
+        "codigo_proveedor": "MNO-312",
+        "descripcion": "Soporte mecanizado CNC",
+        "cantidad": 5,
+        "precio_unitario": 400.0,
+        "fecha_pactada": "2024-05-15",
+        "estado": "cancelado",
+        "cantidad_pendiente": 5,
+        "centro_costos": "CC-MEC-04"
+      }
+    ]
+  },
+  {
+    "numero_oc": "OC-1003-20240506",
+    "fecha": "2024-05-06",
+    "importe": 23500.0,
+    "pdf_adjunto": true,
+    "pdf_path": "/assets/pdfs/OC-1003.pdf",
+    "detalle_items": [
+      {
+        "codigo": "C-100",
+        "codigo_proveedor": "ABC-100",
+        "descripcion": "Panel estructural 1000x2000",
+        "cantidad": 10,
+        "precio_unitario": 2350.0,
+        "fecha_pactada": "2024-05-18",
+        "estado": "entregado",
+        "cantidad_pendiente": 0,
+        "centro_costos": "CC-OBRA-01"
+      }
+    ]
+  },
+  {
+    "numero_oc": "OC-1004-20240509",
+    "fecha": "2024-05-09",
+    "importe": 600.0,
+    "pdf_adjunto": false,
+    "detalle_items": [
+      {
+        "codigo": "D-001",
+        "codigo_proveedor": "LMN-201",
+        "descripcion": "Rondanas acero inoxidable",
+        "cantidad": 300,
+        "precio_unitario": 2.0,
+        "fecha_pactada": "2024-05-13",
+        "estado": "entregado",
+        "cantidad_pendiente": 0,
+        "centro_costos": "CC-MNT-05"
+      }
+    ]
+  },
+  {
+    "numero_oc": "OC-1005-20240515",
+    "fecha": "2024-05-15",
+    "importe": 3600.0,
+    "pdf_adjunto": true,
+    "pdf_path": "/assets/pdfs/OC-1005.pdf",
+    "detalle_items": [
+      {
+        "codigo": "E-010",
+        "codigo_proveedor": "XYZ-556",
+        "descripcion": "Caja eléctrica IP65",
+        "cantidad": 8,
+        "precio_unitario": 350.0,
+        "fecha_pactada": "2024-05-20",
+        "estado": "pendiente",
+        "cantidad_pendiente": 4,
+        "centro_costos": "CC-ELC-01"
+      },
+      {
+        "codigo": "E-011",
+        "codigo_proveedor": "XYZ-557",
+        "descripcion": "Conectores macho-hembra",
+        "cantidad": 20,
+        "precio_unitario": 40.0,
+        "fecha_pactada": "2024-05-22",
+        "estado": "pendiente",
+        "cantidad_pendiente": 20,
+        "centro_costos": "CC-ELC-01"
+      }
+    ]
+  }
 ]

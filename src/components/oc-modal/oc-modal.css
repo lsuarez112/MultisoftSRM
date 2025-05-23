@@ -1,0 +1,6 @@
+@layer utilities {
+
+  .download-btn {
+    @apply flex items-center justify-center px-3 py-1.5 text-white rounded transition font-inter cursor-pointer w-24
+  }
+}

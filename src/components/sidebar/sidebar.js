@@ -1,4 +1,4 @@
-export function setupComponent() {}
+export function setupComponent() { }
 
 export function initComponent() {
   const sidebar = document.getElementById('sidebar');
@@ -87,4 +87,16 @@ export function initComponent() {
 
   // Listen for window resize
   window.addEventListener('resize', handleMobileView);
+
+  // Log out
+  const logoutBtn = document.getElementById('log-out');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+      // Ejemplo: limpieza de almacenamiento y redirección
+      localStorage.clear(); // o localStorage.removeItem('token') si es más específico
+      sessionStorage.clear();
+      document.location = '/MultisoftSRM/login.html'; // Redireccionar a la página de login
+    });
+  }
+
 }

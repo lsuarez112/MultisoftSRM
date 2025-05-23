@@ -41,7 +41,7 @@ export function initLogin() {
             }
 
             setTimeout(() => {
-                document.location = '/index.html';
+                document.location = '/MultisoftSRM/index.html';
             }, 1000);
         } else {
             showStatus('Usuario o contraseña incorrectos.', 'error');
@@ -66,7 +66,7 @@ async function tryAutoLogin() {
         showStatus('🔄 Login recordado detectado. Redirigiendo...', )
 
         await new Promise(resolve => setTimeout(resolve, 1500));
-        document.location = 'index.html';
+        document.location = '/MultisoftSRM/index.html';
     }
 }
 

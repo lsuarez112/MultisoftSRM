@@ -25,10 +25,10 @@ if (!page) {
     process.exit(1);
 }
 
-const htmlPath = `./${page}.html`;
-const cssInput = `./src/pages/${page}/${page}.css`;
-const cssOutput = `./src/pages/${page}/output.css`;
-const configPath = `./tailwind.config.${page}.js`;
+const htmlPath = `${page}.html`;
+const cssInput = `src/pages/${page}/${page}.css`;
+const cssOutput = `src/pages/${page}/output.css`;
+const configPath = `tailwind.config.${page}.js`;
 
 if (!existsSync(htmlPath) || !existsSync(cssInput)) {
     console.error(`❌ Faltan archivos: ${htmlPath} o ${cssInput}`);
@@ -72,7 +72,7 @@ console.log(`📦 Componentes detectados:`, [...processed]);
 // 🧾 Generar configuración temporal de Tailwind
 const contentPaths = [
     `./${page}.html`,
-    ...[...processed].map(c => `./src/components/${c}/*.{html,js,css}`)
+    ...[...processed].map(c => `src/components/${c}/*.{html,js,css}`)
 ];
 
 const configContent = `

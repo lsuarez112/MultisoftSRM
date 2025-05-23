@@ -66,7 +66,7 @@ async function tryAutoLogin() {
         showStatus('🔄 Login recordado detectado. Redirigiendo...', )
 
         await new Promise(resolve => setTimeout(resolve, 1500));
-        document.location = '/index.html';
+        document.location = 'index.html';
     }
 }
 

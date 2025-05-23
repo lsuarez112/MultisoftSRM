@@ -1,4 +1,4 @@
-import {formatearFecha} from '/src/scripts/modules/tools.js'
+import {formatearFecha} from '/MultisoftSRM/src/scripts/modules/tools.js'
 
 // @ts-nocheck
 // 📦 Modo test: guardamos el archivo en memoria por OC

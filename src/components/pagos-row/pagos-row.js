@@ -1,4 +1,4 @@
-import {formatearFecha} from '/src/scripts/modules/tools.js'
+import {formatearFecha} from '/MultisoftSRM/src/scripts/modules/tools.js'
 
 export function initPagoRowEvents() {
     const botonesVer = document.querySelectorAll('#pagos_table_content a[data-pago]');

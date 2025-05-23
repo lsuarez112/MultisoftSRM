@@ -6,11 +6,11 @@
  * según la página actual, detectada mediante el atributo `data-page` en el <body>.
  */
 
-import { setupDarkMode } from 'src/scripts/modules/darkmode.js';
+import { setupDarkMode } from '/src/scripts/modules/darkmode.js';
 
-import { buildTemplates } from 'src/scripts/modules/template-engine.js';
-import { initLogin } from 'src/pages/login/login.js';
-import { initIndex } from 'src/pages/index/index.js';
+import { buildTemplates } from '/src/scripts/modules/template-engine.js';
+import { initLogin } from '/src/pages/login/login.js';
+import { initIndex } from '/src/pages/index/index.js';
 
 $(async function () {
   // 1. Inicializa el modo oscuro (añade/remueve clase 'dark' en <html>)

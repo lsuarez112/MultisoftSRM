@@ -65,6 +65,7 @@
     --font-weight-semibold: 600;
     --font-weight-extrabold: 800;
     --tracking-wide: 0.025em;
+    --radius-sm: 0.25rem;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
@@ -435,6 +436,9 @@
   .h-screen {
     height: 100vh;
   }
+  .max-h-64 {
+    max-height: calc(var(--spacing) * 64);
+  }
   .min-h-screen {
     min-height: 100vh;
   }
@@ -458,12 +462,6 @@
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
-  }
-  .max-w-3 {
-    max-width: calc(var(--spacing) * 3);
-  }
-  .max-w-3xl {
-    max-width: var(--container-3xl);
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
@@ -554,9 +552,6 @@
   .flex-col {
     flex-direction: column;
   }
-  .flex-row {
-    flex-direction: row;
-  }
   .flex-wrap {
     flex-wrap: wrap;
   }
@@ -565,9 +560,6 @@
   }
   .items-end {
     align-items: flex-end;
-  }
-  .justify-baseline {
-    justify-content: baseline;
   }
   .justify-between {
     justify-content: space-between;
@@ -581,6 +573,9 @@
   .justify-start {
     justify-content: flex-start;
   }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -589,6 +584,13 @@
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
+  }
+  .space-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
   }
   .space-y-6 {
     :where(& > :not(:last-child)) {
@@ -617,9 +619,6 @@
     :where(& > :not(:last-child)) {
       border-color: var(--color-gray-200);
     }
-  }
-  .self-end {
-    align-self: flex-end;
   }
   .truncate {
     overflow: hidden;
@@ -650,16 +649,15 @@
   .rounded-md {
     border-radius: var(--radius-md);
   }
+  .rounded-sm {
+    border-radius: var(--radius-sm);
+  }
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
   .rounded-t {
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
-  }
-  .rounded-t-lg {
-    border-top-left-radius: var(--radius-lg);
-    border-top-right-radius: var(--radius-lg);
   }
   .border {
     border-style: var(--tw-border-style);
@@ -807,6 +805,9 @@
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
   }
+  .ps-4 {
+    padding-inline-start: calc(var(--spacing) * 4);
+  }
   .ps-9 {
     padding-inline-start: calc(var(--spacing) * 9);
   }
@@ -821,6 +822,9 @@
   }
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
+  }
+  .pr-1 {
+    padding-right: calc(var(--spacing) * 1);
   }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
@@ -848,9 +852,6 @@
   }
   .align-middle {
     vertical-align: middle;
-  }
-  .align-text-bottom {
-    vertical-align: text-bottom;
   }
   .font-inter {
     font-family: var(--font-inter);
@@ -958,9 +959,6 @@
   }
   .capitalize {
     text-transform: capitalize;
-  }
-  .uppercase {
-    text-transform: uppercase;
   }
   .italic {
     font-style: italic;
@@ -1448,19 +1446,9 @@
       width: calc(1/2 * 100%);
     }
   }
-  .md\:max-w-2xl {
-    @media (width >= 48rem) {
-      max-width: var(--container-2xl);
-    }
-  }
   .md\:max-w-7xl {
     @media (width >= 48rem) {
       max-width: var(--container-7xl);
-    }
-  }
-  .md\:flex-col {
-    @media (width >= 48rem) {
-      flex-direction: column;
     }
   }
   .md\:flex-row {
@@ -1471,6 +1459,11 @@
   .md\:justify-start {
     @media (width >= 48rem) {
       justify-content: flex-start;
+    }
+  }
+  .md\:gap-4 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 4);
     }
   }
   .md\:rounded-lg {
@@ -1646,6 +1639,11 @@
       }
     }
   }
+  .dark\:ring-offset-gray-800 {
+    &:where(.dark, .dark *) {
+      --tw-ring-offset-color: var(--color-gray-800);
+    }
+  }
   .dark\:hover\:bg-gray-700 {
     &:where(.dark, .dark *) {
       &:hover {
@@ -1677,6 +1675,13 @@
     &:where(.dark, .dark *) {
       &:focus {
         border-color: var(--color-blue-300);
+      }
+    }
+  }
+  .dark\:focus\:ring-blue-600 {
+    &:where(.dark, .dark *) {
+      &:focus {
+        --tw-ring-color: var(--color-blue-600);
       }
     }
   }

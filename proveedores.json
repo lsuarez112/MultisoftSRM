@@ -1,0 +1,12 @@
+[
+  { "codigo": "PRV-001", "nombre": "Metalúrgica Andina S.A.", "cuit": "30-12345678-9" },
+  { "codigo": "PRV-002", "nombre": "Corte Láser Norte", "cuit": "30-23456789-0" },
+  { "codigo": "PRV-003", "nombre": "Tornillería del Sur", "cuit": "30-34567890-1" },
+  { "codigo": "PRV-004", "nombre": "Acindar Distribución", "cuit": "30-45678901-2" },
+  { "codigo": "PRV-005", "nombre": "Soluciones Eléctricas SRL", "cuit": "30-56789012-3" },
+  { "codigo": "PRV-006", "nombre": "Insumos Industriales Patagonia", "cuit": "30-67890123-4" },
+  { "codigo": "PRV-007", "nombre": "Grupo Fábrica Central", "cuit": "30-78901234-5" },
+  { "codigo": "PRV-008", "nombre": "Estampados del Litoral", "cuit": "30-89012345-6" },
+  { "codigo": "PRV-009", "nombre": "Fixer Ingeniería de Montaje", "cuit": "30-90123456-7" },
+  { "codigo": "PRV-010", "nombre": "Comercial Los Andes", "cuit": "30-01234567-8" }
+]

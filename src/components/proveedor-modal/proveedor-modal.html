@@ -1,0 +1,50 @@
+<div x-data="{
+  search: '',
+  selected: $store.proveedorModal.proveedorSeleccionado
+}" x-cloak id="proveedor-modal">
+  <div x-show="$store.proveedorModal.isOpen" class="fixed inset-0 z-40 bg-black/80 flex items-center justify-center px-4">
+    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 w-full max-w-2xl"
+         @click.outside="$store.proveedorModal.close()">
+
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">
+        Filtro por Proveedor
+      </h2>
+
+      <!-- Búsqueda (visual) -->
+      <div class="my-2 w-full">
+        <label for="from-data-filter" class="block text-sm text-gray-500 dark:text-gray-300">Buscar Proveedor</label>
+        <input id="from-data-filter" x-model="search"
+               placeholder="Código / Razón Social / CUIT"
+               class="w-full p-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <!-- Listado con scroll -->
+      <div class="mt-4 space-y-2 max-h-64 overflow-y-auto pr-1">
+        <template x-for="(prov, index) in $store.proveedorModal.proveedorData" :key="prov.codigo">
+          <div class="flex items-center ps-4 border border-gray-200 dark:border-gray-700 rounded-sm">
+            <input :id="`checkbox-${prov.codigo}`" type="checkbox"
+                   :checked="selected === prov.codigo || index === 3"
+                   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label :for="`checkbox-${prov.codigo}`"
+                   class="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                   x-text="`${prov.nombre} (${prov.codigo}) - CUIT: ${prov.cuit}`"></label>
+          </div>
+        </template>
+      </div>
+
+      <!-- Selección actual -->
+      <div class="mt-4 text-sm text-gray-500 dark:text-gray-300">
+        Seleccionado: <span class="font-semibold" x-text="selected || 'PRV-004'"></span>
+      </div>
+
+      <!-- Botón cerrar -->
+      <div class="mt-6 text-right">
+        <button @click="$store.proveedorModal.proveedorSeleccionado = selected; $store.proveedorModal.close()"
+                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500 transition cursor-pointer font-inter">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

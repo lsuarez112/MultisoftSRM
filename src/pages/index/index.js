@@ -19,6 +19,10 @@
 export async function initIndex() {
   console.log('[SRM] 🔄 Iniciando página principal...');
 
+  // Importa y ejecuta funciones de eventos para modal de Proveedores
+  const { initHandleProveedor } = await import('/MultisoftSRM/src/components/proveedor-modal/proveedor-modal.js');
+  initHandleProveedor();
+
   // Simula un delay para mostrar loaders (1.5s)
   await new Promise(resolve => setTimeout(resolve, 1500));
 
@@ -235,7 +239,7 @@ async function renderPagos() {
     });
 
     // Importa y expone funciones de eventos para las filas de Pagos
-    const { initPagoRowEvents} = await import('/MultisoftSRM/src/components/pagos-row/pagos-row.js');
+    const { initPagoRowEvents } = await import('/MultisoftSRM/src/components/pagos-row/pagos-row.js');
     initPagoRowEvents();
 
   } catch (err) {

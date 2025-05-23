@@ -76,7 +76,7 @@ async function renderOrdenesDeCompra() {
     Alpine.initTree(tablaBody);
 
     // Importa y expone funciones de eventos para las filas de OC
-    const { initOcRowEvents, uploadPDF, handleFileChange } = await import('/src/components/oc-row/oc-row.js');
+    const { initOcRowEvents, uploadPDF, handleFileChange } = await import('/MultisoftSRM/src/components/oc-row/oc-row.js');
     window.uploadPDF = uploadPDF;
     window.handleFileChange = handleFileChange;
     initOcRowEvents();
@@ -235,7 +235,7 @@ async function renderPagos() {
     });
 
     // Importa y expone funciones de eventos para las filas de Pagos
-    const { initPagoRowEvents} = await import('/src/components/pagos-row/pagos-row.js');
+    const { initPagoRowEvents} = await import('/MultisoftSRM/src/components/pagos-row/pagos-row.js');
     initPagoRowEvents();
 
   } catch (err) {

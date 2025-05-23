@@ -1,4 +1,4 @@
-import {formatearFecha} from '/src/scripts/modules/tools.js'
+import {formatearFecha} from 'MultisoftSRM/src/scripts/modules/tools.js'
 
 // @ts-nocheck
 // 📦 Modo test: guardamos el archivo en memoria por OC
@@ -75,7 +75,7 @@ export function initOcRowEvents() {
             const numeroOC = btn.dataset.oc;
 
             try {
-                const response = await fetch('/ordenes_de_compra.json');
+                const response = await fetch('MultisoftSRM/ordenes_de_compra.json');
                 const data = await response.json();
                 const oc = data.find(o => o.numero_oc === numeroOC);
                 if (!oc) {

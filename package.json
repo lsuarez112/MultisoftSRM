@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build:page": "node ./src/scripts/modules/build-page.js",
-    "watch:login": "node ./src/scripts/modules/build-page.js login --watch",
-    "watch:index": "node ./src/scripts/modules/build-page.js index --watch"
+    "build:page": "node .MultisoftSRM/src/scripts/modules/build-page.js",
+    "watch:login": "node .MultisoftSRM/src/scripts/modules/build-page.js login --watch",
+    "watch:index": "node .MultisoftSRM/src/scripts/modules/build-page.js index --watch"
   },
   "keywords": [],
   "author": "",

@@ -1,4 +1,4 @@
-import {formatearFecha} from '/src/scripts/modules/tools.js'
+import {formatearFecha} from 'MultisoftSRM/src/scripts/modules/tools.js'
 
 export function initPagoRowEvents() {
     const botonesVer = document.querySelectorAll('#pagos_table_content a[data-pago]');
@@ -9,7 +9,7 @@ export function initPagoRowEvents() {
             const numeroPago = btn.dataset.pago;
 
             try {
-                const response = await fetch('/pagos.json');
+                const response = await fetch('MultisoftSRM/pagos.json');
                 const data = await response.json();
                 const pago = data.find(thisPago => thisPago.numero_pago === numeroPago);
                 if (!pago) {

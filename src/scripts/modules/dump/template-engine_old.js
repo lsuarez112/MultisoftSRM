@@ -23,7 +23,7 @@ export async function buildTemplates() {
 
     await Promise.all(elements.map(async (el) => {
       const componentName = el.getAttribute('data-include');
-      const basePath = `/src/components/${componentName}/${componentName}`;
+      const basePath = `MultisoftSRM/src/components/${componentName}/${componentName}`;
       const componentHtmlPath = `${basePath}.html`;
 
       try {

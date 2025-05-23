@@ -47,8 +47,8 @@ async function renderOrdenesDeCompra() {
     tablaBody.innerHTML = '';
 
     const [ordenes, rowTemplateHtml] = await Promise.all([
-      fetch('./ordenes_de_compra.json').then(r => r.json()),
-      fetch('/src/components/oc-row/oc-row.html').then(r => r.text())
+      fetch('.MultisoftSRM/ordenes_de_compra.json').then(r => r.json()),
+      fetch('MultisoftSRM/src/components/oc-row/oc-row.html').then(r => r.text())
     ]);
 
     ordenes.forEach(oc => {
@@ -76,7 +76,7 @@ async function renderOrdenesDeCompra() {
     Alpine.initTree(tablaBody);
 
     // Importa y expone funciones de eventos para las filas de OC
-    const { initOcRowEvents, uploadPDF, handleFileChange } = await import('/src/components/oc-row/oc-row.js');
+    const { initOcRowEvents, uploadPDF, handleFileChange } = await import('MultisoftSRM/src/components/oc-row/oc-row.js');
     window.uploadPDF = uploadPDF;
     window.handleFileChange = handleFileChange;
     initOcRowEvents();
@@ -104,8 +104,8 @@ async function renderFacturas() {
     tablaBody.innerHTML = '';
 
     const [facturas, rowTemplateHtml] = await Promise.all([
-      fetch('./facturas.json').then(r => r.json()),
-      fetch('/src/components/fact-row/fact-row.html').then(r => r.text())
+      fetch('.MultisoftSRM/facturas.json').then(r => r.json()),
+      fetch('MultisoftSRM/src/components/fact-row/fact-row.html').then(r => r.text())
     ]);
 
     facturas.forEach(fact => {
@@ -146,8 +146,8 @@ async function renderResumenDeCuenta() {
     tablaBody.innerHTML = '';
 
     const [resumen, rowTemplateHtml] = await Promise.all([
-      fetch('./resumen.json').then(r => r.json()),
-      fetch('/src/components/resumen-row/resumen-row.html').then(r => r.text())
+      fetch('.MultisoftSRM/resumen.json').then(r => r.json()),
+      fetch('MultisoftSRM/src/components/resumen-row/resumen-row.html').then(r => r.text())
     ]);
 
     /**
@@ -217,8 +217,8 @@ async function renderPagos() {
     tablaBody.innerHTML = '';
 
     const [pagos, rowTemplateHtml] = await Promise.all([
-      fetch('./pagos.json').then(r => r.json()),
-      fetch('/src/components/pagos-row/pagos-row.html').then(r => r.text())
+      fetch('.MultisoftSRM/pagos.json').then(r => r.json()),
+      fetch('MultisoftSRM/src/components/pagos-row/pagos-row.html').then(r => r.text())
     ]);
 
     // Generar filas
@@ -235,7 +235,7 @@ async function renderPagos() {
     });
 
     // Importa y expone funciones de eventos para las filas de Pagos
-    const { initPagoRowEvents} = await import('/src/components/pagos-row/pagos-row.js');
+    const { initPagoRowEvents} = await import('MultisoftSRM/src/components/pagos-row/pagos-row.js');
     initPagoRowEvents();
 
   } catch (err) {

@@ -2,7 +2,7 @@
   export default {
     content: [
   "./login.html",
-  "./src/components/toggle-darkmode/*.{html,js,css}"
+  ".MultisoftSRM/src/components/toggle-darkmode/*.{html,js,css}"
 ],
     darkMode: 'class',
     theme: {

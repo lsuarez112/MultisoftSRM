@@ -5,8 +5,8 @@
  *
  * Requiere:
  * - Un archivo ./<pagina>.html (por ejemplo login.html)
- * - Un archivo de entrada ./src/pages/<pagina>/<pagina>.css
- * - Componentes en ./src/components/<componente>/<componente>.html
+ * - Un archivo de entrada .MultisoftSRM/src/pages/<pagina>/<pagina>.css
+ * - Componentes en .MultisoftSRM/src/components/<componente>/<componente>.html
  *
  * Uso:
  *   node scripts/build-page.js login
@@ -17,7 +17,7 @@ import { readFileSync, writeFileSync, unlinkSync, existsSync } from 'fs';
 import { join } from 'path';
 
 // 📦 Ruta base de componentes
-const componentsRoot = './src/components';
+const componentsRoot = '.MultisoftSRM/src/components';
 
 const page = process.argv[2];
 if (!page) {
@@ -26,8 +26,8 @@ if (!page) {
 }
 
 const htmlPath = `./${page}.html`;
-const cssInput = `./src/pages/${page}/${page}.css`;
-const cssOutput = `./src/pages/${page}/output.css`;
+const cssInput = `.MultisoftSRM/src/pages/${page}/${page}.css`;
+const cssOutput = `.MultisoftSRM/src/pages/${page}/output.css`;
 const configPath = `./tailwind.config.${page}.js`;
 
 if (!existsSync(htmlPath) || !existsSync(cssInput)) {
@@ -72,7 +72,7 @@ console.log(`📦 Componentes detectados:`, [...processed]);
 // 🧾 Generar configuración temporal de Tailwind
 const contentPaths = [
     `./${page}.html`,
-    ...[...processed].map(c => `./src/components/${c}/*.{html,js,css}`)
+    ...[...processed].map(c => `.MultisoftSRM/src/components/${c}/*.{html,js,css}`)
 ];
 
 const configContent = `

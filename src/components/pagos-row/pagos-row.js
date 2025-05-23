@@ -9,7 +9,7 @@ export function initPagoRowEvents() {
             const numeroPago = btn.dataset.pago;
 
             try {
-                const response = await fetch('/pagos.json');
+                const response = await fetch('pagos.json');
                 const data = await response.json();
                 const pago = data.find(thisPago => thisPago.numero_pago === numeroPago);
                 if (!pago) {
